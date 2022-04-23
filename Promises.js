@@ -73,3 +73,10 @@ console.log(getDataAsyncWithTryCatch())
 // fetch('https://pokeapi.co/api/v2/pokemon-form/132/')
 //  .then(response => response.json())
 //  .then(data => console.log(data))
+
+// Fetching data from an API with async/await
+// const getPokemon = async () => {
+//   const response = await fetch('https://pokeapi.co/api/v2/pokemon-form/132/')
+//   const data = await response.json()
+//   console.log('4. Fetching data from an API with async/await', data)
+// }
