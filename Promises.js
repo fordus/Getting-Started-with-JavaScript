@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 const data = [{
   id: 1,
   name: 'John',
@@ -55,7 +57,7 @@ const getDataAsync = async () => {
   console.log('2. Async/Await', data)
 }
 
-console.log(getDataAsync())
+getDataAsync()
 
 // With Try/Catch
 const getDataAsyncWithTryCatch = async () => {
@@ -67,16 +69,27 @@ const getDataAsyncWithTryCatch = async () => {
   }
 }
 
-console.log(getDataAsyncWithTryCatch())
+getDataAsyncWithTryCatch()
 
 // Fetching data from an API
-// fetch('https://pokeapi.co/api/v2/pokemon-form/132/')
-//  .then(response => response.json())
-//  .then(data => console.log(data))
+fetch('https:pokeapi.co/api/v2/pokemon-form/132/')
+  .then(response => response.json())
+  .then(data => console.log(data))
 
 // Fetching data from an API with async/await
-// const getPokemon = async () => {
-//   const response = await fetch('https://pokeapi.co/api/v2/pokemon-form/132/')
-//   const data = await response.json()
-//   console.log('4. Fetching data from an API with async/await', data)
-// }
+
+async function fetchDataAsyncAwait () {
+  const response = await fetch('https:raw.githubusercontent.com/fordus/JSON/main/projects.JSON')
+  const data = await response.json()
+  console.log('async/await ', data[0].title)
+}
+
+fetchDataAsyncAwait()
+
+function fetchData () {
+  fetch('https:raw.githubusercontent.com/fordus/JSON/main/projects.JSON')
+    .then(data => data.json())
+    .then(data => console.log(data[0].description))
+}
+
+fetchData()
